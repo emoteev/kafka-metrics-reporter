@@ -1,0 +1,20 @@
+{:paths ["src" "classes"]
+ :deps {cognician/dogstatsd-clj {:mvn/version "0.1.2"}
+        com.stuartsierra/component {:mvn/version "0.4.0"}
+        environ {:mvn/version "1.1.0"}
+        org.apache.kafka/kafka-clients {:mvn/version "2.3.0"
+                                        :exclusions [org.slf4j/slf4j-log4j12 log4j org.slf4j/slf4j-api]}
+        org.clojure/clojure {:mvn/version "1.10.1"}
+        org.clojure/core.async {:mvn/version "0.4.490"}
+        org.clojure/tools.logging {:mvn/version "0.4.1"}}
+
+ :aliases
+ {:dev {:extra-paths ["dev"]
+        :extra-deps {org.clojure/tools.namespace {:mvn/version "0.3.0-alpha4"}
+                     reloaded.repl {:mvn/version "0.2.4"}}}
+
+  :aot {:main-opts ["-e" "(compile,'kafka-metrics-reporter.core)"]}
+
+  :uberjar {:main-opts ["-m" "mach.pack.alpha.one-jar kafka_metrics_reporter.jar"]
+            :extra-deps {pack/pack.alpha {:git/url "git@github.com:juxt/pack.alpha.git"
+                                          :sha "81b9e47d992b17aa3e3af1a47aed1f0287ebe9b8"}}}}}
