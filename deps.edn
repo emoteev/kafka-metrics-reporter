@@ -15,6 +15,8 @@
 
   :aot {:main-opts ["-e" "(compile,'kafka-metrics-reporter.core)"]}
 
-  :uberjar {:main-opts ["-m" "mach.pack.alpha.one-jar kafka_metrics_reporter.jar"]
-            :extra-deps {pack/pack.alpha {:git/url "git@github.com:juxt/pack.alpha.git"
-                                          :sha "81b9e47d992b17aa3e3af1a47aed1f0287ebe9b8"}}}}}
+  :uberjar {:extra-deps {uberdeps {:mvn/version "0.1.4"}}
+            :main-opts ["-m" "uberdeps.uberjar"]}
+
+  :deploy {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
+           :main-opts ["-m" "deps-deploy.deps-deploy" "deploy" "target/kafka-metrics-reporter.jar"]}}}

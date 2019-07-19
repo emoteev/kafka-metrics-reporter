@@ -2,7 +2,7 @@
   (:import (org.apache.kafka.common.metrics KafkaMetric)
            (java.util List))
   (:gen-class
-    :name kafka-metrics-reporter.KafkaMetricsReporter
+    :name kafka_metrics_reporter.KafkaMetricsReporter
     :implements [org.apache.kafka.common.metrics.MetricsReporter]
     :init init-class
     :state state
