@@ -1,6 +1,6 @@
 [![Clojars Project](https://img.shields.io/clojars/v/kafka_metrics_reporter.svg)](https://clojars.org/kafka_metrics_reporter)
 
-# Kafka Metrics Reporter
+# DogStatsd Kafka Metrics Reporter
 
 Kafka Metrics Reporter is a DogStatsd reporter for Kafka metrics.
 
